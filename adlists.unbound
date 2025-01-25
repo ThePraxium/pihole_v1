@@ -1,0 +1,90 @@
+#📙 Multi PRO++ - Maximum protection
+#https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#orange_book-multi-pro---maximum-protection-
+#Sweeper - Aggressive cleans the Internet and protects your privacy! Blocks Ads, Affiliate, Tracking, Metrics, Telemetry, Phishing, Malware, Scam, Fake, Coins and other "Crap".
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/pro.plus.txt
+
+#:trollface: Fake - Protects against internet scams, traps & fakes!
+#A blocklist for blocking fake stores, -streaming, rip-offs, cost traps and co.
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/fake.txt
+
+#🎉 Pop-Up Ads - Protects against annoying and malicious pop-up ads!
+#A blocklist for annoying and malicious pop-up ads.
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/popupads.txt
+
+#🔐 Threat Intelligence Feeds - Increases security significantly! (Recommended)
+#A blocklist for blocking malware, cryptojacking, scam, spam and phishing. Blocks domains known to spread malware, launch phishing attacks and host command-and-control servers.
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/tif.txt
+
+#📤 DoH/VPN/TOR/Proxy Bypass - Prevent methods to bypass your DNS!
+#Prevent methods to bypass your DNS.
+#Note
+#To ensure the bootstrap is your DNS server you must redirect or block standard DNS outbound (TCP/UDP 53) and block all DNS over TLS/QUIC (TCP/UDP 853) outbound.
+#1📤 Encrypted DNS Servers only
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/doh-vpn-proxy-bypass.txt
+
+#🔍 Safesearch not supported - Prevent the use of search engines that do not support Safesearch!
+#A blocklist for blocking search engines that do not support Safesearch.
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/nosafesearch.txt
+
+#🔏 Dynamic DNS blocking - Protects against the malicious use of dynamic DNS services!
+#A blocklist for blocking dynamic DNS services to protect against malicious use in phishing campaigns and others.
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/dyndns.txt
+
+#💻 Badware Hoster blocking - Protects against the malicious use of host services!
+#A blocklist for blocking known hosters that also host badware via user content to prevent the use of these hosters for malicious purposes.
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/hoster.txt
+
+#🔮 Most Abused TLDs - Protects against known malicious Top Level Domains! (Recommended)
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/spam-tlds.txt
+
+#💀 Anti Piracy - Protects against piracy!
+#Blocks websites and services that are mainly used for the illegal distribution of copyrighted content.
+
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/anti.piracy.txt
+
+#🎰 Gambling - Protects against gambling content!
+#Blocks gambling content.
+
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/gambling.txt
+
+#📲 Native Tracker - Broadband tracker of devices, services and operating systems
+#Blocks native broadband tracker from devices, services and operating systems that track your activity.
+
+#Amazon (Devices, Shopping, Video)
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.amazon.txt
+
+#Apple (iOS, macOS, tvOS)
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.apple.txt
+
+Huawei (Devices)
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.huawei.txt
+
+#Microsoft (Windows, Office, MSN)
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.winoffice.txt
+
+#Samsung
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.samsung.txt
+
+#TikTok (Fingerprinting)
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.tiktok.txt
+
+#TikTok (Fingerprinting) Aggressive
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.tiktok.extended.txt
+
+#LG webOS
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.lgwebos.txt
+
+#Roku
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.roku.txt
+
+#Vivo
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.vivo.txt
+
+#OPPO/Realme
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.oppo-realme.txt
+
+#Xiaomi
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/rpz/native.xiaomi.txt
+
+#NSFW LISTS
+https://big.oisd.nl/unbound

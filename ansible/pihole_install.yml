@@ -1,0 +1,71 @@
+---
+- name: Pi-hole Installation Playbook
+  hosts: all
+  vars_prompt:
+    - name: pi_ip
+      prompt: "Enter the Raspberry Pi's IP address or hostname"
+      private: no
+    - name: pi_user
+      prompt: "Enter your Raspberry Pi's SSH username (default: pi)"
+      default: pi
+      private: no
+    - name: static_ip
+      prompt: "Enter a static IP address for your Pi-hole (e.g., 192.168.1.100)"
+      private: no
+    - name: gateway_ip
+      prompt: "Enter your router's gateway IP address (e.g., 192.168.1.1)"
+      private: no
+    - name: dns_ip
+      prompt: "Enter DNS server IP address (leave blank to use default Pi-hole settings)"
+      private: no
+      default: ""
+    - name: admin_password
+      prompt: "Enter a new admin password for Pi-hole"
+      private: yes
+
+  tasks:
+    - name: Ensure system is reachable
+      ansible.builtin.ping:
+
+    - name: Update and upgrade system packages
+      ansible.builtin.shell: |
+        sudo apt update && sudo apt upgrade -y
+      become: yes
+
+    - name: Install required dependencies
+      ansible.builtin.package:
+        name: curl
+        state: present
+      become: yes
+    
+    - name: Download and run the Pi-hole installer
+      ansible.builtin.shell: |
+        curl -sSL https://install.pi-hole.net | sudo bash
+      become: yes
+      
+    - name: Configure static IP
+      ansible.builtin.copy:
+        dest: /etc/dhcpcd.conf
+        content: |
+          interface wlan0
+          static ip_address={{ static_ip }}/24
+          static routers={{ gateway_ip }}
+          static domain_name_servers={{ dns_ip | default(gateway_ip) }}
+      become: yes
+
+    - name: Restart networking services
+      ansible.builtin.service:
+        name: dhcpcd
+        state: restarted
+      become: yes
+
+    - name: Set Pi-hole admin password
+      ansible.builtin.shell: |
+        pihole -a -p {{ admin_password }}
+      become: yes
+
+    - name: Display completion message
+      ansible.builtin.debug:
+        msg: |
+          Pi-hole installation and configuration complete!
+          Access the admin panel at: http://{{ static_ip }}/admin

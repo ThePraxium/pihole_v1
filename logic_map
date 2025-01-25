@@ -1,0 +1,48 @@
+1. System sends a DNS query for google.com
+   ┌──────────────┐
+   │   Your PC    │
+   └──────┬───────┘
+          ▼
+2. Query is sent to the router (if DNS is set to router)
+   ┌──────────────┐
+   │   Router     │
+   └──────┬───────┘
+          ▼
+3. Router forwards query to Pi-hole (configured as router's DNS)
+   ┌──────────────┐
+   │   Pi-hole    │
+   └──────┬───────┘
+          ▼
+4. Pi-hole checks its adlists
+   ┌──────────────┐
+   │   Adlists    │
+   └──────┬───────┘
+          │
+     ┌────┴─────────────┐
+     │                  │
+     ▼                  ▼
+   Blocked          Not Blocked
+   (e.g., ad)       (e.g., google.com)
+   │                  │
+   ▼                  ▼
+Pi-hole returns   Pi-hole forwards
+blocked result    query to Unbound
+(e.g., 0.0.0.0)   ┌──────────────┐
+                  │   Unbound    │
+                  └──────┬───────┘
+                         ▼
+5. Unbound performs recursive DNS resolution
+   ┌────────────────────────────────────┐
+   │ Contacts root, TLD, and auth DNS   │
+   │ servers to find IP for google.com │
+   └────────────────────────────────────┘
+                         ▼
+6. Unbound returns resolved IP to Pi-hole
+   ┌──────────────┐
+   │   Pi-hole    │
+   └──────┬───────┘
+          ▼
+7. Pi-hole returns the resolved IP to the system
+   ┌──────────────┐
+   │   Your PC    │
+   └──────────────┘
